@@ -33,6 +33,6 @@ public class RabbitController {
 
     @PostMapping("/order")
     public void sendEventOrder(@RequestBody UpdateSendRequest request){
-        template.convertAndSend(Rabbit.EXCHANGE,"ms.event.order.inProcess",request);
+        template.convertAndSend(Rabbit.EXCHANGE,"ms.event.order.inProcess4",request);
     }
 }

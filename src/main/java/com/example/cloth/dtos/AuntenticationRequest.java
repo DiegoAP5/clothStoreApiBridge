@@ -15,5 +15,4 @@ public class AuntenticationRequest {
 
     private String password;
 
-    private String email;
 }

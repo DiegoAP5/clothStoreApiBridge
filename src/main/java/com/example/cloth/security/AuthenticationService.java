@@ -46,11 +46,11 @@ public class AuthenticationService {
     public AuntenticationRespons authenticate(AuntenticationRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        request.getEmail(),
+                        request.getName(),
                         request.getPassword()
                 )
         );
-        var user = repository.findByEmail(request.getEmail())
+        var user = repository.findByName(request.getName())
                 .orElseThrow();
 
         Map<String, Object> payload = new HashMap<>();
