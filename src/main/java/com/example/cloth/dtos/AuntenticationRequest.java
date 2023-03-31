@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AuntenticationRequest {
 
-    private String name;
+    private String email;
 
     private String password;
 
