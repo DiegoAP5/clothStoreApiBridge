@@ -2,6 +2,7 @@ package com.example.cloth.controller;
 
 import com.example.cloth.configuration.Rabbit;
 import com.example.cloth.dtos.CreateEvent;
+import com.example.cloth.dtos.UpdateRefundRequest;
 import com.example.cloth.dtos.UpdateSendRequest;
 import com.example.cloth.service.EventSend;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -27,12 +28,12 @@ public class RabbitController {
     }
 
     @PostMapping("/refund")
-    public void sendEventRefund(@RequestBody UpdateSendRequest request){
+    public void sendEventRefund(@RequestBody UpdateRefundRequest request){
         template.convertAndSend(Rabbit.EXCHANGE,"ms.event.notification",request);
     }
 
     @PostMapping("/order")
     public void sendEventOrder(@RequestBody UpdateSendRequest request){
-        template.convertAndSend(Rabbit.EXCHANGE,"ms.event.order.inProcess4",request);
+        template.convertAndSend(Rabbit.EXCHANGE,"ms.event.order.inProcess",request);
     }
 }
