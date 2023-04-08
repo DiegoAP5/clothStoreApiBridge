@@ -29,7 +29,6 @@ public class AuthenticationService {
                 .email(request.getEmail())
                 .role(RoleEnum.ADMIN)
                 .name(request.getName())
-                .cardNumber(request.getCardNumber())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build();
         repository.save(user);
